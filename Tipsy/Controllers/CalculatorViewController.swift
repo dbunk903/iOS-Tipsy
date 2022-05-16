@@ -13,6 +13,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var splitNumberLabel: UILabel!
     var tipAmount:Double = 0.0
     var numberOfPeople = 2
+    var billAmount: Double = 0.0
     @IBAction func tipChanged(_ sender: UIButton) {
         if sender == zeroPctButton{
             zeroPctButton.isSelected = true
@@ -38,7 +39,9 @@ class CalculatorViewController: UIViewController {
         numberOfPeople = Int(sender.value)
     }
     @IBAction func calculatePressed(_ sender: UIButton) {
-        print(numberOfPeople)
+        billAmount = Double(billTextField.text!) ?? 0.0
+        let calculatedAmount = (((billAmount * (1 + billAmount)) / Double(numberOfPeople))*100).rounded() / 100
+        print(calculatedAmount)
     }
 }
 
