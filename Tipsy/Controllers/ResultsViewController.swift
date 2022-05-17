@@ -17,8 +17,6 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         totalLabel.text = res
-        
-        
     }
     @IBAction func recalculatePressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
